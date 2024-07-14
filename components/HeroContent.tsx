@@ -7,10 +7,15 @@ import TypewriterComponent from "typewriter-effect";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
-
+import { motion } from "framer-motion";
 const HeroContent = () => {
   return (
-    <div className="w-full h-full z-20 px-20 mt-48 text-white">
+    <motion.div
+      initial={{ x: "-100vw" }}
+      animate={{ x: 0 }}
+      transition={{ type: "spring", stiffness: 50 }}
+      className="w-full h-full z-20 px-20 mt-48 text-white"
+    >
       <div className="flex items-center  space-x-4">
         <div className="w-[40px] h-[40px]">
           <Image src={hand} alt="hand" className="w-full h-full" />
@@ -50,7 +55,7 @@ const HeroContent = () => {
           />
         </Button>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

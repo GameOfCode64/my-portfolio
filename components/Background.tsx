@@ -1,5 +1,6 @@
 import React from "react";
 import HeroContent from "@/components/HeroContent";
+
 const Background = () => {
   return (
     <div className="relative w-full h-full flex flex-col ">
