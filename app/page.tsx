@@ -1,8 +1,9 @@
 "use client";
-import Hero from "@/app/_sections/Hero";
-import About from "./_sections/About";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Hero from "@/app/_sections/Hero";
+import About from "@/app/_sections/About";
+import Skills from "@/app/_sections/Skills";
 
 export default function Home() {
   const { ref, inView } = useInView({
@@ -13,15 +14,22 @@ export default function Home() {
   return (
     <main className="w-full h-full">
       <Hero />
-      <section ref={ref}>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <About />
-        </motion.div>
-      </section>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <About />
+      </motion.div>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <Skills />
+      </motion.div>
     </main>
   );
 }
