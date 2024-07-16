@@ -18,13 +18,13 @@ const Skills = () => {
           </TabsList>
           <TabsContent value="frontend" className="w-full">
             <div className="mt-12 w-full">
-              <div className="grid w-full md:grid-cols-5 grid-cols-3 gap-5">
+              <div className="grid w-full md:grid-cols-5 grid-cols-3 space-y-6">
                 {Frontend.map((item, index) => (
                   <div
                     className="flex flex-col items-center justify-center"
                     key={index}
                   >
-                    <div className="md:w-[120px] cursor-pointer md:h-[120px] w-[90px] h-[90px] p-6 rounded-full bg-[#6d28d9]/30 flex items-center justify-center">
+                    <div className="md:w-[100px] cursor-pointer md:h-[100px] w-[90px] h-[90px] p-6 rounded-full bg-[#6d28d9]/30 flex items-center justify-center">
                       <Image
                         src={item.image}
                         alt="skill_image"
